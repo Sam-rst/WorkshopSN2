@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.0" orientation="orthogonal" renderorder="right-down" width="50" height="33" tilewidth="16" tileheight="16" infinite="0" nextlayerid="23" nextobjectid="16">
+<map version="1.10" tiledversion="1.10.0" orientation="orthogonal" renderorder="right-down" width="50" height="33" tilewidth="16" tileheight="16" infinite="0" nextlayerid="23" nextobjectid="17">
  <tileset firstgid="1" source="../tsx/tuile_3.tsx"/>
  <tileset firstgid="2305" name="tuile-4" tilewidth="16" tileheight="16" tilecount="2304" columns="48">
   <image source="../../tuile_3.png" width="768" height="768"/>
@@ -637,16 +637,7 @@
 </data>
  </layer>
  <objectgroup id="22" name="Waypoints">
-  <object id="13" name="SpawnEmmaServer" x="120.589" y="420.514">
-   <point/>
-  </object>
-  <object id="12" name="SpawnEmmaFirewall" x="113.632" y="421.287">
-   <point/>
-  </object>
   <object id="11" name="SpawnEmmaSalon" x="112.859" y="423.606">
-   <point/>
-  </object>
-  <object id="10" name="SpawnEmmaTeleporter" x="497.814" y="346.305">
    <point/>
   </object>
   <object id="5" name="Spawn" x="389.594" y="226.49">
@@ -661,5 +652,8 @@
    <point/>
   </object>
   <object id="14" name="AucuneInteraction" x="338.539" y="468.553" width="48" height="35.3333"/>
+  <object id="16" name="SpawnCaporal" x="282.919" y="488.538">
+   <point/>
+  </object>
  </objectgroup>
 </map>

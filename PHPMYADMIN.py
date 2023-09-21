@@ -73,7 +73,7 @@ class LoginPage:
                         pygame.time.wait(100)
                     elif event.key == pygame.K_RETURN or (event.key == pygame.K_KP_ENTER and self.curseur_actif == "mot_de_passe"):
                         if self.verifier_connexion():
-                            self.message_connexion_reussie = "Connexion réussie!"
+                            self.message_connexion_reussie = "Diriges toi vers la salle n°3, tente de rentrer dans un des serveurs."
                             self.connexion_reussie = True
                             self.temps_connexion_reussie = pygame.time.get_ticks()  # Enregistrer le temps
                             pygame.time.wait(1000)  # Attendre 1 seconde

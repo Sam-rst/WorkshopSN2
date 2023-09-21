@@ -21,16 +21,17 @@ items_drop = pygame.sprite.Group()
 items_sprites = pygame.sprite.Group()
 
 #Messages
-dialogues_caporal_intro = DialogBox('sarah', ["Blabla", "Blabla", "Blabla"])
-dialogues_Emma_salon = DialogBox('emma', ["Bonjour Sarah je suis Emma.", "Je te guiderais tout au long de ton expédition !", "Bon courage."])
-dialogues_Emma_teleporter = DialogBox('emma', ["Bienvenue !", "Tu te situe dans mon ordinateur", "Maintenant, tu vas te diriger vers la porte en bas...", "Ce sera l'entrée vers le firewall", "Je t'expliquerai à l'intérieur ta mission"])
-dialogues_Emma_firewall_ferme = DialogBox('emma', ["Un des ordinateurs dans le fond est allumé, trouve le.", "Il va te permettre de trouver un port qui te permettra de rentrer dans le serveur", "Tu devras te connecter avec l'identifiant root...", "... c'est l'administrateur du serveur, il a tous les droits.", "Tentes de rentrer ces mots de passes : 1234, azerty, admin, root"])
-dialogues_Emma_firewall_ouvert = DialogBox('emma', ["Tu as découvert quels ports sont ouverts...", "...vas voir lequel est ouvert"])
-dialogues_Emma_server = DialogBox('emma', ["Tu as réussi à rentrer dans le serveur, bien joué !", "Maintenant tu vas tenter d'attaquer la base de données", "Pour cela tu vas chercher quelques indices parmi les différentes salles autour.", "Ce sont des réseaux, dont l'un possède la BDD", "Bonne chance !"])
-dialogues_Emma_BDD = DialogBox('emma', ["Bien joué tu as trouvé le bon serveur !"])
-dialogues_Emma_final = DialogBox('emma', ["Bravo, récupère ce parchemin"])
+dialogues_caporal_intro = DialogBox('caporal', ["Bonjour soldat !", "Aujourd'hui ta mission est de récupérer la...","...formule d'une arme chimique confidentielle.", "Elle est tombée dans les mains d'un groupe militant terroriste.","Pour te déplacer, utilise les touches  [Z]  pour avancer...","... [S] pour reculer, [Q] pour aller à gauche,  [D] pour aller a droite.","Pour intéragir avec les différents objets, appuie sur [A]. ","Pour quitter les différentes intéractions, appuie sur [ECHAP].", "Puis pour passer à la salle suivante.", "Apuie sur  [E]  pour te téléporter."])
+dialogues_Emma_salon = DialogBox('emma', ["Bonjour Sarah, je m'appelle Emma.", "Je te guiderais tout au long de ton expédition.","Déplace-toi vers mon ordinateur puis connecte-toi .", "Appuie sur [E] pour te téléporter."])
+dialogues_Emma_teleporter = DialogBox('emma', ["Incroyable ! Il semblerait que tu sois passé sans accroc.", "A partir de maintenant tu vas devoir passer dans toutes les salles en passant...", "...par le firewall, la salle serveur ainsi que la base de données !", "Ton objectif est donc de récupérer la formule chimique sous forme de parchemin, ", "il sera à la dernière salle devant une grande cuve tu ne pourras pas le louper !","Ne sois pas effrayée de cet environnement je resterais avec toi...","...tout le long de cette aventure ","Maintenant que les explications sont faites je te laisse passer...","...par cette porte à droite qui te guidera vers le firewall."])
+dialogues_Emma_firewall_ferme = DialogBox('emma', ["Tu peux constater autour de toi différents portails.","Ces portails représentent des ports fermés.","Ton but est de trouver à partir d’un des ordinateurs du fond de la pièce...","...le port nécessaire pour accéder à la salle serveur.","Connecte donc toi à cet ordinateur et entre dans le terminal la commande “nmap”","Cette commande te permettra de savoir quelle port est ouvert.","Rends-toi en face d'un des ports que tu devras chercher et passe le portail."])
+dialogues_Emma_firewall_ouvert = DialogBox('emma', ["Bravo, il semblerait que un port soit ouvert !","Déplace toi vers le port."])
+dialogues_Emma_server = DialogBox('emma', ["Te voici à la moitié de ton périple !","Tu t’en sors déjà très bien.","Voici les salles serveurs, en anglais data center.","Ces salles sont généralement climatisées pour garder les composants...","... informatiques à bonnes températures permettant ainsi leurs bons entretiens. ","Ces salles permettent le fonctionnement optimal des systèmes informatiques", "Connecte-toi à l'ordinateur plus haut...", "... et rentre les identifiants suivants dans la base sql.","Les identifiants par défauts sont root pour l'identifiant et pour le mot de passe."])
+dialogues_Emma_BDD = DialogBox('emma', ["Quelle structure impressionnante !", "Tu as devant toi une data, elle renferme ce qui nous intéresse.", "Les données sont stockées dans différentes capacités de stockage...","...telles que des disques durs, des serveurs, des clés usb, des clouds etc…","Ces données sont stockées sous forme d’octet.","Pour te donner une image, le cerveau humain permet d'emmagasiner...","...l’équivalent de 1200 pétaoctet.","1 pétaoctet c’est 1000 fois la capacité d’un disque dur moderne.","Le cerveau humain est impressionnant n’est ce pas ?","Le but de ton périple se situe à l'intérieur de cette structure, passe le portail."])
+dialogues_Emma_final = DialogBox('emma', ["A présent récupere le parchemin"])
 
 
+first_room_collisions = pygame.sprite.Group()
 salon_collisions = pygame.sprite.Group()
 teleporter_collisions = pygame.sprite.Group()
 firewall_collisions = pygame.sprite.Group()
@@ -39,7 +40,8 @@ bdd_collisions = pygame.sprite.Group()
 final_collisions = pygame.sprite.Group()
 
 camera_groups = {
-    "Salon": CameraGroup(name_map='Salon', list_teleporters=[('EntranceTeleporter', 'Teleporter', 'EntranceTeleporter')], layers_obstacles=(['Collisions'], salon_collisions), messages=dialogues_Emma_salon, name_interaction="AucuneInteraction"),
+    "FirstRoom": CameraGroup(name_map='FirstRoom', list_teleporters=[('EntranceSalon', 'Salon', 'EntranceSalon')], layers_obstacles=(['Collisions'], first_room_collisions), messages=dialogues_caporal_intro, name_interaction="AucuneInteraction"),
+    "Salon": CameraGroup(name_map='Salon', list_teleporters=[('EntranceTeleporter', 'Teleporter', 'EntranceTeleporter'), ('ExitSalon', 'FirstRoom', 'ExitSalon')], layers_obstacles=(['Collisions'], salon_collisions), messages=dialogues_Emma_salon, name_interaction="AucuneInteraction"),
     "Teleporter": CameraGroup(name_map='Teleporter', list_teleporters=[('ExitTeleporter', 'Salon', 'ExitTeleporter'), ('EntranceFirewall', 'FirewallFerme', 'EntranceFirewall')], layers_obstacles=(['Collisions'], teleporter_collisions), messages=dialogues_Emma_teleporter, name_interaction="AucuneInteraction"),
     "FirewallFerme": CameraGroup(name_map='FirewallFerme', list_teleporters=[('ExitFirewall', 'Teleporter', 'ExitFirewall')], layers_obstacles=(['Collisions'], firewall_collisions), messages=dialogues_Emma_firewall_ferme, name_interaction="Terminal"),
     "FirewallOuvert": CameraGroup(name_map='FirewallOuvert', list_teleporters=[('ExitFirewall', 'Teleporter', 'ExitFirewall'), ('EntranceServer', 'Server', 'EntranceServer')], layers_obstacles=(['Collisions'], firewall_collisions), messages=dialogues_Emma_firewall_ouvert, name_interaction="AucuneInteraction"),
@@ -54,6 +56,6 @@ map_name = save_data.load_player_map()
 mob_dead = save_data.load_mob_dead()
 
 if map_name is None:
-    camera_group = camera_groups["Salon"]
+    camera_group = camera_groups["FirstRoom"]
 else:
     camera_group = camera_groups[map_name]
