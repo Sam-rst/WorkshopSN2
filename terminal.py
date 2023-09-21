@@ -36,7 +36,8 @@ class CMD:
             "Port 80: Open",
             "Port 22: Open",
             "Port 443: Open",
-            "Scan complet. 3 ports ouverts."
+            "Scan complet. 3 ports ouverts.",
+            "Pour quitter : [ECHAP]"
         ]
 
         for resultat in nmap_resultats:

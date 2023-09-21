@@ -46,7 +46,7 @@ camera_groups = {
     "FirewallFerme": CameraGroup(name_map='FirewallFerme', list_teleporters=[('ExitFirewall', 'Teleporter', 'ExitFirewall')], layers_obstacles=(['Collisions'], firewall_collisions), messages=dialogues_Emma_firewall_ferme, name_interaction="Terminal"),
     "FirewallOuvert": CameraGroup(name_map='FirewallOuvert', list_teleporters=[('ExitFirewall', 'Teleporter', 'ExitFirewall'), ('EntranceServer', 'Server', 'EntranceServer')], layers_obstacles=(['Collisions'], firewall_collisions), messages=dialogues_Emma_firewall_ouvert, name_interaction="AucuneInteraction"),
     "Server": CameraGroup(name_map='Server', list_teleporters=[('ExitServer', 'FirewallOuvert', 'ExitServer'), ('EntranceBDD', 'BDD', 'EntranceBDD')], layers_obstacles=(['Collisions'], server_collisions), messages=dialogues_Emma_server, name_interaction="BDD"),
-    "BDD": CameraGroup(name_map='BDD', list_teleporters=[('ExitBDD', 'Server', 'ExitBDD'), ('EntranceFinal', 'FinalRoom', 'EntranceFinal')], layers_obstacles=(['Collisions'], bdd_collisions), messages=dialogues_Emma_BDD, name_interaction="AucuneInteraction"),
+    "BDD": CameraGroup(name_map='BDD', list_teleporters=[('ExitBDD', 'Server', 'ExitBDD'), ('EntranceFinal', 'FinalRoom', 'EntranceFinal')], layers_obstacles=(['Collisions'], bdd_collisions), messages=dialogues_Emma_BDD, name_interaction="Dezoom"),
     "FinalRoom": CameraGroup(name_map='FinalRoom', list_teleporters=[('EntranceFinal', 'FinalRoom', 'EntranceFinal'), ('ExitFinal', 'BDD', 'ExitFinal')], layers_obstacles=(['Collisions'], final_collisions), messages=dialogues_Emma_final, name_interaction="Parchemin"),
 }
 # Water Fall ;)
@@ -56,6 +56,6 @@ map_name = save_data.load_player_map()
 mob_dead = save_data.load_mob_dead()
 
 if map_name is None:
-    camera_group = camera_groups["FinalRoom"]
+    camera_group = camera_groups["FirstRoom"]
 else:
     camera_group = camera_groups[map_name]
