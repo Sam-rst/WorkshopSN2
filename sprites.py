@@ -27,8 +27,8 @@ dialogues_Emma_teleporter = DialogBox('emma', ["Incroyable ! Il semblerait que t
 dialogues_Emma_firewall_ferme = DialogBox('emma', ["Tu peux constater autour de toi différents portails.","Ces portails représentent des ports fermés.","Ton but est de trouver à partir d’un des ordinateurs du fond de la pièce...","...le port nécessaire pour accéder à la salle serveur.","Connecte donc toi à cet ordinateur et entre dans le terminal la commande “nmap”","Cette commande te permettra de savoir quelle port est ouvert.","Rends-toi en face d'un des ports que tu devras chercher et passe le portail."])
 dialogues_Emma_firewall_ouvert = DialogBox('emma', ["Bravo, il semblerait que un port soit ouvert !","Déplace toi vers le port."])
 dialogues_Emma_server = DialogBox('emma', ["Te voici à la moitié de ton périple !","Tu t’en sors déjà très bien.","Voici les salles serveurs, en anglais data center.","Ces salles sont généralement climatisées pour garder les composants...","... informatiques à bonnes températures permettant ainsi leurs bons entretiens. ","Ces salles permettent le fonctionnement optimal des systèmes informatiques", "Connecte-toi à l'ordinateur plus haut...", "... et rentre les identifiants suivants dans la base sql.","Les identifiants par défauts sont root pour l'identifiant et pour le mot de passe."])
-dialogues_Emma_BDD = DialogBox('emma', ["Quelle structure impressionnante !", "Tu as devant toi une data, elle renferme ce qui nous intéresse.", "Les données sont stockées dans différentes capacités de stockage...","...telles que des disques durs, des serveurs, des clés usb, des clouds etc…","Ces données sont stockées sous forme d’octet.","Pour te donner une image, le cerveau humain permet d'emmagasiner...","...l’équivalent de 1200 pétaoctet.","1 pétaoctet c’est 1000 fois la capacité d’un disque dur moderne.","Le cerveau humain est impressionnant n’est ce pas ?","Le but de ton périple se situe à l'intérieur de cette structure, passe le portail."])
-dialogues_Emma_final = DialogBox('emma', ["A présent récupere le parchemin"])
+dialogues_Emma_BDD = DialogBox('emma', ["Quelle structure impressionnante !", "Tu as devant toi une data, elle renferme ce qui nous intéresse.", "Les données sont stockées dans différentes capacités de stockage...","...telles que des disques durs, des serveurs, des clés usb, des clouds etc…", "Ces données sont stockées sous forme d’octet.","Pour te donner une image, le cerveau humain permet d'emmagasiner...","...l’équivalent de 1200 pétaoctet.","1 pétaoctet c’est 1000 fois la capacité d’un disque dur moderne.","Le cerveau humain est impressionnant n’est ce pas ?","Le but de ton périple se situe à l'intérieur de cette structure, passe le portail."])
+dialogues_Emma_final = DialogBox('emma', ["Bravo à toi Sarah, tu as fini la démo de notre jeu !", "A présent, récupère le parchemin qui se trouve dans le coffre.", "A très bientôt !"])
 
 
 first_room_collisions = pygame.sprite.Group()
@@ -56,6 +56,6 @@ map_name = save_data.load_player_map()
 mob_dead = save_data.load_mob_dead()
 
 if map_name is None:
-    camera_group = camera_groups["FirstRoom"]
+    camera_group = camera_groups["FinalRoom"]
 else:
     camera_group = camera_groups[map_name]

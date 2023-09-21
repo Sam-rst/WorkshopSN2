@@ -181,20 +181,29 @@ class MenuFin:
 
         running = True
         menu_open = True
-
+        transition_timer = pygame.USEREVENT + 1
+        pygame.time.set_timer(transition_timer, 3000)
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
+                    
                 if menu_open:
                     if event.type == pygame.MOUSEBUTTONDOWN:
                         if continue_button.collidepoint(event.pos):
                             menu_open = False
+                            pygame.time.delay(7)
+                            sprites.camera_group = camera_groups["Salon"]
+                            running = False
                         elif quit_button.collidepoint(event.pos):
                             pygame.quit()
                             sys.exit()
+                    if event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_ESCAPE:
+                            pygame.quit()
+                            sys.exit()
 
-            screen.fill(BLACK if menu_open else GREEN)
+            screen.fill(BLACK if menu_open else BLACK)
 
             if menu_open:
                 fireworks.append(Firework(random.randint(0, WIDTH), HEIGHT))
