@@ -6,8 +6,7 @@
  <tileset firstgid="5533" source="../tsx/tuile_2.tsx"/>
  <tileset firstgid="7837" source="../tsx/tuile_7.tsx"/>
  <tileset firstgid="10141" source="../tsx/tuile_666.tsx"/>
- <tileset firstgid="12445" source="../../../../../PT_Python/graphics/Tiled/data/tsx/Overworld_tiled.tsx"/>
- <tileset firstgid="13885" source="../../../../../PT_Python/graphics/Tiled/data/tsx/objects.tsx"/>
+ <tileset firstgid="13885" source="../tsx/objects.tsx"/>
  <layer id="1" name="background" width="32" height="32">
   <data encoding="csv">
 910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,910,

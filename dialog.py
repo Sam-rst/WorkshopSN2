@@ -70,7 +70,7 @@ class Aide:
         
     def render(self):
         if self.reading:
-            text = self.font.render(self.texts[self.text_index], False, (255, 255, 255), (211, 211, 211))
+            text = self.font.render(self.texts[self.text_index], False, (211, 211, 211), (255, 255, 255))
             screen.blit(text, (self.X_POSITION, self.Y_POSITION))
         
     def next_text(self):
