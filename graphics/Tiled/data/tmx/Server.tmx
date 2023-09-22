@@ -1052,13 +1052,13 @@
   <object id="1" name="EntranceServer" x="1094" y="1583">
    <point/>
   </object>
-  <object id="5" name="ExitServer" x="1051" y="1538" width="88" height="70"/>
+  <object id="5" name="ExitServer" x="1051" y="1532" width="88" height="81.3333"/>
   <object id="6" name="ExitBDD" x="294" y="1157">
    <point/>
   </object>
   <object id="2" name="EntranceBDD" x="274.33" y="1141" width="39.6667" height="93"/>
   <object id="11" name="AucuneInteraction" x="1384" y="900.333" width="48" height="35.3333"/>
-  <object id="12" name="BDD" x="1070" y="1152" width="82" height="72"/>
+  <object id="12" name="BDD" x="1070" y="1145.33" width="82" height="86.6667"/>
   <object id="13" name="SpawnCaporal" x="1477" y="921">
    <point/>
   </object>

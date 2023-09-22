@@ -72,7 +72,7 @@
 </data>
  </layer>
  <objectgroup id="7" name="Waypoints">
-  <object id="1" name="EntranceSalon" x="51" y="49.6667" width="40.6667" height="45.3333"/>
+  <object id="1" name="EntranceSalon" x="51" y="49.6667" width="40.6667" height="59"/>
   <object id="2" name="ExitSalon" x="72.3333" y="113.333">
    <point/>
   </object>

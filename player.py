@@ -25,23 +25,23 @@ class Player(Caracter):
     def input(self):
         keys = pygame.key.get_pressed()
         
-        if keys[pygame.K_z] or keys[pygame.K_s] or keys[pygame.K_d] or keys[pygame.K_q]:
-            if keys[pygame.K_z]:
+        if keys[pygame.K_z] or keys[pygame.K_s] or keys[pygame.K_d] or keys[pygame.K_q] or keys[pygame.K_RIGHT] or keys[pygame.K_LEFT] or keys[pygame.K_DOWN] or keys[pygame.K_UP]:
+            if keys[pygame.K_z] or keys[pygame.K_UP]:
                 self.direction.y = -1
                 self.animation_direction = 'Top Walk'
                 self.is_moving = True
-            elif keys[pygame.K_s]:
+            elif keys[pygame.K_s] or keys[pygame.K_DOWN]:
                 self.direction.y = 1
                 self.animation_direction = 'Bottom Walk'
                 self.is_moving = True
             else:
                 self.direction.y = 0
                 
-            if keys[pygame.K_d]:
+            if keys[pygame.K_d] or keys[pygame.K_RIGHT]:
                 self.direction.x = 1
                 self.animation_direction = 'Right Walk'
                 self.is_moving = True
-            elif keys[pygame.K_q]:
+            elif keys[pygame.K_q] or keys[pygame.K_LEFT]:
                 self.direction.x = -1
                 self.animation_direction = 'Left Walk'
                 self.is_moving = True

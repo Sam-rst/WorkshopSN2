@@ -643,7 +643,7 @@
   <object id="5" name="Spawn" x="389.594" y="226.49">
    <point/>
   </object>
-  <object id="3" name="ExitTeleporter" x="357.333" y="204.667" width="74" height="50"/>
+  <object id="3" name="ExitTeleporter" x="357.333" y="183.667" width="74" height="71"/>
   <object id="2" name="EntranceTeleporter" x="390" y="219.333">
    <point/>
   </object>

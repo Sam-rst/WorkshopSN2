@@ -228,7 +228,7 @@
   <object id="1" name="EntranceFinal" x="247.333" y="454.667">
    <point/>
   </object>
-  <object id="2" name="ExitFinal" x="208" y="393.333" width="78.6667" height="80"/>
+  <object id="2" name="ExitFinal" x="208" y="437.333" width="78.6667" height="36"/>
   <object id="4" name="AucuneInteraction" x="367.333" y="432" width="64" height="49.3333"/>
   <object id="5" name="Spawn" x="248.667" y="453.333">
    <point/>

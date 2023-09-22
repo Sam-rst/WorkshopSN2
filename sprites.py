@@ -1,7 +1,8 @@
 import pygame
 from camera import CameraGroup
 from save import SaveData
-from dialog import DialogBox
+from dialog import DialogBox, Aide
+from touche import Touche
 
 
 
@@ -30,6 +31,23 @@ dialogues_Emma_server = DialogBox('emma', ["Te voici à la moitié de ton périp
 dialogues_Emma_BDD = DialogBox('emma', ["Quelle structure impressionnante !", "Tu as devant toi une data, elle renferme ce qui nous intéresse.", "Les données sont stockées dans différentes capacités de stockage...","...telles que des disques durs, des serveurs, des clés usb, des clouds etc…", "Ces données sont stockées sous forme d’octet.","Pour te donner une image, le cerveau humain permet d'emmagasiner...","...l’équivalent de 1200 pétaoctet.","1 pétaoctet c’est 1000 fois la capacité d’un disque dur moderne.","Le cerveau humain est impressionnant n’est ce pas ?","Le but de ton périple se situe à l'intérieur de cette structure, passe le portail."])
 dialogues_Emma_final = DialogBox('emma', ["Bravo à toi Sarah, tu as fini la démo de notre jeu !", "A présent, récupère le parchemin qui se trouve dans le coffre.", "A très bientôt !"])
 
+#Touches
+touches = pygame.sprite.Group()
+touche_i = Touche("touche_i", touches)
+touche_a = Touche("touche_a", touches)
+touche_d = Touche("touche_d", touches)
+touche_e = Touche("touche_e", touches)
+touche_q = Touche("touche_q", touches)
+touche_s = Touche("touche_s", touches)
+touche_fleche_bas = Touche("touche_fleche_bas", touches)
+touche_fleche_droite = Touche("touche_fleche_droite", touches)
+touche_fleche_gauche = Touche("touche_fleche_gauche", touches)
+touche_fleche_haut = Touche("touche_fleche_haut", touches)
+touche_escape = Touche("touche_escape", touches)
+
+aide_teleportation = Aide(["Appuie sur le bouton [E] pour te téléporter"])
+aide_terminal = Aide(["Appuie sur le bouton [A] pour ouvrir le terminal"])
+liste_aides_message = [aide_terminal, aide_teleportation]
 
 first_room_collisions = pygame.sprite.Group()
 salon_collisions = pygame.sprite.Group()

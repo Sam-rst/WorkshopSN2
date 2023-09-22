@@ -1441,7 +1441,7 @@
   <object id="4" name="ExitFinal" x="627" y="837">
    <point/>
   </object>
-  <object id="2" name="EntranceFinal" x="577" y="722" width="93" height="90"/>
+  <object id="2" name="EntranceFinal" x="577" y="722" width="93" height="98"/>
   <object id="5" name="AucuneInteraction" x="115" y="914" width="154" height="88"/>
   <object id="8" name="SpawnCaporal" x="885" y="1053">
    <point/>
